@@ -54,7 +54,10 @@ def monthly_challenge_by_number(request, month):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return render(request, "challenges/challenge.html") # (argunment, template path)
+        return render(request, "challenges/challenge.html",{
+            "text":challenge_text, #Considerar usar "" comillas dobles para que funcione dentro de render
+            "month_name":month.capitalize()
+            }) # (argument. En este caso usamos el template path)
         # response_data = f"<h1>{challenge_text}</h1>"
         # response_data = render_to_string("challenges/challenge.html")
         # return HttpResponse(response_data)
