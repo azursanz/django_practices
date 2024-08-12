@@ -15,7 +15,7 @@ monthly_challenges = {
     "september": "Go out with your girlfriend to new places",
     "october": "Go and drink some beers at weeked",
     "november": "Buy some things to your family what end of year partys are near",
-    "december": "Spend quality time with your family"
+    "december": None
 }
 
 # Create your views here.
