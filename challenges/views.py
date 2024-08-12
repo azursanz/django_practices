@@ -25,17 +25,20 @@ def index(request):
     list_items = ""
     months = list(monthly_challenges.keys())
 
-    for month in months:
-        campitalized_month = month.capitalize()
-        month_path = reverse("month-challenge", args=[month])
-        list_items += f"<li><a href=\"{month_path}\">{
-            campitalized_month}</a></li>"
+    # for month in months:
+    #     campitalized_month = month.capitalize()
+    #     month_path = reverse("month-challenge", args=[month])
+    #     list_items += f"<li><a href=\"{month_path}\">{
+    #         campitalized_month}</a></li>"
+    # Este fue el codigo primario
+    # # "<li><a href="...">January</a></li><li><a href="...">February</a></li>..."
 
-    # "<li><a href="...">January</a></li><li><a href="...">February</a></li>..."
+    # reponse_data = f"<ul>{list_items}</ul>"
 
-    reponse_data = f"<ul>{list_items}</ul>"
-
-    return HttpResponse(reponse_data)
+    # return HttpResponse(reponse_data)
+    return render(request, "challenges/index.html", {
+        "months": months
+    })
 
 
 def monthly_challenge_by_number(request, month):
@@ -54,10 +57,11 @@ def monthly_challenge_by_number(request, month):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return render(request, "challenges/challenge.html",{
-            "text":challenge_text, #Considerar usar "" comillas dobles para que funcione dentro de render
-            "month_name":month.capitalize()
-            }) # (argument. En este caso usamos el template path)
+        return render(request, "challenges/challenge.html", {
+            # Considerar usar "" comillas dobles para que funcione dentro de render
+            "text": challenge_text,
+            "month_name": month.capitalize()
+        })  # (argument. En este caso usamos el template path)
         # response_data = f"<h1>{challenge_text}</h1>"
         # response_data = render_to_string("challenges/challenge.html")
         # return HttpResponse(response_data)
