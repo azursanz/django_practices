@@ -12,6 +12,7 @@ monthly_challenges = {
     "may": "Go walk at least 20 min per day,rememmber is you HB",
     "june": "Try to reach the divine medal in Dota 2",
     "july": "Try yo improve in your project",
+    "august": "Here is keeping with the practice of django",
     "september": "Go out with your girlfriend to new places",
     "october": "Go and drink some beers at weeked",
     "november": "Buy some things to your family what end of year partys are near",
