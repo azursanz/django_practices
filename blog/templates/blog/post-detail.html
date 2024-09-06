@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block title %}
+    This Post Title
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href={% static "blog/post-detail.css" %}/>
+{% endblock %}
+
+{% block content %}
+    <section id="summary">
+        <h2>Post Tile</h2>
+        <article>
+            <img src="{% static "blog/images/mountains.jpg" %}" alt="Post Title"/>
+            <address>By Xavier</address>
+            <div>
+                Last updated on <time>August 06th</time>
+            </div>
+        </article>
+    </section>
+
+    <main>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit 
+            beatae nesciunt nisi ex. Optio velit repellat autem nulla praesentium, 
+            dignissimos voluptatem aut est aliquid quae, ex ea mollitia eveniet!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit 
+            beatae nesciunt nisi ex. Optio velit repellat autem nulla praesentium, 
+            dignissimos voluptatem aut est aliquid quae, ex ea mollitia eveniet!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit 
+            beatae nesciunt nisi ex. Optio velit repellat autem nulla praesentium, 
+            dignissimos voluptatem aut est aliquid quae, ex ea mollitia eveniet!
+        </p>
+    </main>
+
+{% endblock %}
